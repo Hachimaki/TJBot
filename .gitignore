@@ -1,0 +1,13 @@
+# Bluemix
+.cfignore
+manifest.yml
+
+# Env
+.env
+
+# Dependency directory
+@ Commenting this out is preferred by some people, see
+# https://www.npmjs.org/doc/misc/...
+node_modules
+package-lock.json
+.DS_Store

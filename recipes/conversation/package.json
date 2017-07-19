@@ -7,6 +7,7 @@
     "url": "https://github.com/ibmtjbot/tjbot/issues"
   },
   "dependencies": {
+    "sleep": "^5.1.1",
     "tjbot": "latest"
   },
   "main": "conversation.js",

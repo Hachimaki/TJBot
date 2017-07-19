@@ -28,8 +28,12 @@ var hardware = ['microphone', 'speaker'];
 
 // set up TJBot's configuration
 var tjConfig = {
-    log: {
+   log: {
         level: 'verbose'
+    },
+    robot: {
+	name: 'TJ',
+	gender: 'male'
     }
 };
 
@@ -47,7 +51,7 @@ tj.listen(function(msg) {
     if (msg.startsWith(tj.configuration.robot.name)) {
         // remove our name from the message
         var turn = msg.toLowerCase().replace(tj.configuration.robot.name.toLowerCase(), "");
-
+	console.log('I got the message!'); 
         // send to the conversation service
         tj.converse(WORKSPACEID, turn, function(response) {
             // speak the result
