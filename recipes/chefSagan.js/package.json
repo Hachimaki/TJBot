@@ -1,10 +1,10 @@
 {
-  "name": "conversation",
-  "description": "TJBot conversation recipe",
+  "name": "chefSagan",
+  "description": "TJBot recipe help recipe",
   "version": "0.0.1",
-  "author": "TJBot <tjbot@us.ibm.com>",
+  "author": "Vivian Tan <vivian.tan@ibm.com>",
   "bugs": {
-    "url": "https://github.com/ibmtjbot/tjbot/issues"
+    "url": "https://github.com/Hachimaki/tjbot/issues"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -23,21 +23,49 @@
     "supertest": "^3.0.0"
   },
   "dependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.22.0",
+    "babelify": "^7.3.0",
+    "body-parser": "^1.16.0",
+    "bunyan": "^1.8.1",
+    "bunyan-node-logger": "^1.0.2",
+    "casperjs": "^1.1.3",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.14.0",
+    "express-browserify": "^1.0.2",
+    "express-rate-limit": "^2.6.0",
+    "express-secure-only": "^0.2.1",
+    "express-session": "^1.15.3",
+    "extend": "^3.0.1",
+    "helmet": "^3.4.0",
+    "immutable": "^3.8.1",
+    "morgan": "^1.7.0",
+    "r-dom": "^2.3.2",
+    "rx": "^4.1.0",
+    "rx-http-request": "^1.2.0",
+    "stream": "0.0.2",
+    "string": "^3.3.3",
+    "uglifyify": "^3.0.4",
     "sleep": "^5.1.1",
     "tjbot": "latest"
   },
-  "main": "conversation.js",
-  "homepage": "https://github.com/ibmtjbot/tjbot/tree/master/recipes/conversation",
+  "main": "chefSagan.js",
+  "homepage": "https://github.com/Hachimaki/TJBot/recipes/chefSagan",
   "keywords": [
-    "tjbot"
+    "tjbot",
+    "chef",
+    "sagan"
   ],
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:ibmtjbot/tjbot.git"
+    "url": "git@github.com:Hachimaki/tjbot.git"
   },
   "scripts": {
-    "start": "node conversation.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node chefSagan.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "validate": "node ./node_modules/eslint/bin/eslint.js ."
   }
 }
