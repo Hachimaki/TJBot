@@ -1,5 +1,5 @@
-import config from './config';
-import { apiGatewayRequest, COMMON_API_GATEWAY_HEADERS } from './fetch';
+const config = require('./config');
+const fetch = require('./fetch');
 
 const SaganService = {
 
@@ -31,9 +31,9 @@ const SaganService = {
 
     console.log('request', payload);
     // return apiGatewayRequest(`${config.saganRoot}`, {
-    return apiGatewayRequest(`${config.saganRoot}`, {
+    return fetch.apiGatewayRequest(`${config.saganRoot}`, {
       method: 'post',
-      headers: COMMON_API_GATEWAY_HEADERS,
+      headers: fetch.COMMON_API_GATEWAY_HEADERS,
       body: JSON.stringify(payload),
     })
       .then(r =>

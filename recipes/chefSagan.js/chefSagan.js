@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-import TJBot from 'tjbot';
-import config from './config';
-import Sagan from './sagan';
+const TJBot = require('tjbot');
+const config = require('./config');
+const Sagan = require('./sagan');
 
 // obtain our credentials from config.js
 const credentials = config.credentials;
