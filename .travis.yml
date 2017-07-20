@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+- '6'
+cache:
+  directories:
+  - node_modules
+before_install:
+- npm install -g swagger
+install:
+- npm install
+before_script:
+- npm run validate
+notifications:
+  email:
+    recipients:
+    - scottsd@us.ibm.com
+    - Jonathan.Clow@ibm.com
+    on_success: change
+    on_failure: always
+  slack:
+    secure: IJUYLXffwc6b+Z+kcwofW3YWkvPEauXVbYTO3Io+54lYrxA5msoseFvhffeKYPfkSXRBUnm42BpuWaswK4hPJQYrfQEEnFRWUnVlChh7Cov4vq0jUEaKytS+Hunw6S1W9KUQvFxrO/QIsTU/TQU/yZqhjltw+yKCsJzyUhMAelRf6mC8NaonbZBJRLaowlWA4YnFmNVz1rs8kOBqoV80niCeOW9fgMtk6Uc/08pCjVhh82vRDoOOca19YMdB0p7tCLv1WX9awItGacwTw0GDo+XNGC3PWAwNgXoIBkEwLZETOsBE9npmvkHNb68aSNq611MwQSRqKovWpf965U+cvXqOvhUHWMls1x5b3Z9AmTf4phAp5BKlKAZFiwXArmaPyx6TCo3aW1t8FdLaaeJvI+VrA/JvSOceLEoJYebEVulOuG64AH6/jDjFZdDJorTFzWXlY7kmSlWFN/yZODVvjBkWPBDVVX+DLczd6X39cJPXneocotaVtvrYfTIe+SeqDEDWxfTUi1FA819pa8mNbXN7AQAli7KYcM67a+Vv6heA8uopkePzK9WMwINK80+pGlhtehNkq8RPVh76kJBEIoialCNprOjP5GU4ai70x9Q3jVWkTV21fXN2h4WfrOSxa3+63ClLikXPUnp6lNMotXYIKr7lOeKJHRzdfL2hdWk=
