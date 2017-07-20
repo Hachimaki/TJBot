@@ -1,4 +1,4 @@
-export const COMMON_API_GATEWAY_HEADERS = {
+module.exports.COMMON_API_GATEWAY_HEADERS = {
   Accept: 'application/json',
   'Content-Type': 'application/json',
 };
@@ -14,7 +14,7 @@ function checkResponseStatus(response) {
   throw error;
 }
 
-export function apiGatewayRequest(url, options) {
+module.exports.apiGatewayRequest = function (url, options) {
   const requesturl = `${url}`;
   return fetch(requesturl, options)
     .then(checkResponseStatus)

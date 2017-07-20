@@ -1,7 +1,8 @@
 const config = require('./config');
 const fetch = require('./fetch');
 
-const SaganService = {
+// const SaganService = {
+module.exports.SaganService = {
 
   // private vars
   // _responseContext = {};
@@ -53,4 +54,5 @@ const SaganService = {
   },
 };
 
-export default SaganService;
+// export default SaganService;
+
