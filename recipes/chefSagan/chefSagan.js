@@ -55,6 +55,7 @@ function discoParty() {
   }
 }
 
+
 // listen for speech
 tj.listen((msg) => {
   const containsTurn = msg.indexOf('turn') >= 0;
@@ -81,7 +82,13 @@ tj.listen((msg) => {
   else {
     Sagan.message(msg)
     .then((r) => {
+      const res = JSON.parse(r);
+      console.log(res);
+
+      console.log(res.speech.text);
       tj.speak(r.speech.text);
+    }).catch((err) => {
+      console.log(err);
     });
   }
 });
