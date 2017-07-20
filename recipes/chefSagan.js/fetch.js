@@ -1,22 +1,30 @@
-module.exports.COMMON_API_GATEWAY_HEADERS = {
-  Accept: 'application/json',
-  'Content-Type': 'application/json',
-};
+class fetch {
+  constructor() {
+    const COMMON_API_GATEWAY_HEADERS = {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    };
 
-function checkResponseStatus(response) {
-  if (response.status === 200) {
-    return response;
+    this.COMMON_API_GATEWAY_HEADERS = COMMON_API_GATEWAY_HEADERS;
   }
 
-  console.log('FetchError: ', response.statusText);
-  const error = new Error('Request failed');
-  error.response = response;
-  throw error;
+  checkResponseStatus(response) {
+    if (response.status === 200) {
+      return response;
+    }
+
+    console.log('FetchError: ', response.statusText);
+    const error = new Error('Request failed');
+    error.response = response;
+    throw error;
+  }
+
+  apiGatewayRequest(url, options) {
+    const requesturl = `${url}`;
+    return fetch(requesturl, options)
+      .then(this.checkResponseStatus)
+      .then(response => response.json());
+  }
 }
 
-module.exports.apiGatewayRequest = function (url, options) {
-  const requesturl = `${url}`;
-  return fetch(requesturl, options)
-    .then(checkResponseStatus)
-    .then(response => response.json());
-}
+module.exports.fetch = fetch;

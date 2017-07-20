@@ -2,12 +2,8 @@ const config = require('./config');
 const fetch = require('./fetch');
 
 // const SaganService = {
-module.exports.SaganService = {
-
-  // private vars
-  // _responseContext = {};
-
-  message: (inputText) => {
+class SaganService {
+  message(inputText) {
     // const messageText = inputText || 'hello';
 
     // this._responseContext = {...this._responseContext, ...context};
@@ -45,14 +41,15 @@ module.exports.SaganService = {
         return result;
         */
         r);
-  },
+  }
 
-  _updateContext: (res) => {
+  _updateContext(res) {
     console.log('response', res);
 
     return res;
-  },
-};
+  }
+}
+
+module.exports.SaganService = SaganService;
 
 // export default SaganService;
-
