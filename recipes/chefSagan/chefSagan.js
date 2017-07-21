@@ -22,7 +22,7 @@ const Sagan = require('./sagan');
 const credentials = config.credentials;
 
 // these are the hardware capabilities that our TJ needs for this recipe
-const hardware = ['led', 'microphone'];
+const hardware = ['led', 'microphone', 'speaker'];
 
 // set up TJBot's configuration
 const tjConfig = {
@@ -54,7 +54,8 @@ function discoParty() {
     }, i * 250);
   }
 }
-
+//tj.speak('Welcome to chef Sagan. Are you ready to cook?');
+var firstGreeting = true;
 
 // listen for speech
 tj.listen((msg) => {
@@ -63,6 +64,11 @@ tj.listen((msg) => {
   const containsSet = msg.indexOf('set') >= 0;
   const containsLight = msg.indexOf('the light') >= 0;
   const containsDisco = msg.indexOf('disco') >= 0;
+
+  if (firstGreeting) {
+    tj.speak('Welcome to chef Sagan. Are you ready to cook?');
+    firstGreeting = false;
+  }
 
   if ((containsTurn || containsChange || containsSet) && containsLight) {
     // was there a color uttered?
@@ -83,12 +89,12 @@ tj.listen((msg) => {
     Sagan.message(msg)
     .then((r) => {
       const res = JSON.parse(r);
-      console.log(res);
-
-      console.log(res.speech.text);
-      tj.speak(r.speech.text);
+      console.log('RESULT OBJ: ' + res.speech.text);
+     // tj.speak('message received from Sagan');
+     // console.log('R SPEECH TEXT' + r.speech.text);
+      tj.speak(res.speech.text);
     }).catch((err) => {
-      console.log(err);
+      console.log('ERROR: '+ err);
     });
   }
 });

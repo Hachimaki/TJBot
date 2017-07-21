@@ -43,11 +43,12 @@ var tj = new TJBot(hardware, tjConfig, credentials);
 console.log("You can ask me to introduce myself or tell you a joke.");
 console.log("Try saying, \"" + tj.configuration.robot.name + ", please introduce yourself\" or \"" + tj.configuration.robot.name + ", who are you?\"");
 console.log("You can also say, \"" + tj.configuration.robot.name + ", tell me a joke!\"");
-
+tj.speak('hello, this is a test. The quick brown fox jumped over the lazy dog. My name is TJ. Glad to meet you');
 // listen for utterances with our attentionWord and send the result to
 // the Conversation service
 tj.listen(function(msg) {
     // check to see if they are talking to TJBot
+ //   tj.speak(msg);
     if (msg.startsWith(tj.configuration.robot.name)) {
         // remove our name from the message
         var turn = msg.toLowerCase().replace(tj.configuration.robot.name.toLowerCase(), "");
